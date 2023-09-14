@@ -1,3 +1,5 @@
+import 'package:begginer/screens/Auth/Login/Login.dart';
+import 'package:begginer/screens/Auth/Register/Register.dart';
 import 'package:begginer/screens/SplashScreen/SplashScreen.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
@@ -14,7 +16,12 @@ class AppStartUp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
           textTheme: GoogleFonts.ralewayTextTheme(Theme.of(context).textTheme)),
-      home: const SplashScreen(),
+      //home: const SplashScreen(),
+      routes: {
+        "/": (context) => const SplashScreen(),
+        "login": (context) => const LoginScreen(),
+        "register": (context) => const Register()
+      },
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:begginer/screens/Auth/Login/Login.dart';
 import 'package:begginer/utils/Pallete.dart';
 import 'package:flutter/material.dart';
 
@@ -6,6 +7,12 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //move to login page after 3 secs.
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => const LoginScreen()));
+    });
+
     return Scaffold(
       body: Container(
         color: Pallete.purple,
@@ -20,12 +27,10 @@ class SplashScreen extends StatelessWidget {
                   fontSize: 70,
                   fontWeight: FontWeight.bold),
             ),
-            Padding(
-              padding: EdgeInsets.only(top: 30),
-              child: CircularProgressIndicator(
-                color: Pallete.white,
-              ),
-            )
+            SizedBox(height: 30),
+            CircularProgressIndicator(
+              color: Pallete.white,
+            ),
           ],
         )),
       ),
